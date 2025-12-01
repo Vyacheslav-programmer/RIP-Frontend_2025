@@ -45,9 +45,10 @@
 ```bash
 npm install
 npm run dev
-
-Приложение доступно по адресу: http://localhost:3000/frontend
 ```
+Приложение доступно по адресу: http://localhost:3000/frontend
+
 ## Бэкенд:
 Для работы требуется запущенный бэкенд из 4-й лабораторной (в Docker)
+
 
