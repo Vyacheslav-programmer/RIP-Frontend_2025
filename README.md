@@ -19,7 +19,7 @@
 [Web-project_cloud_cost_RIP_backend_2025](https://github.com/Vyacheslav-programmer/Web-project_cloud_cost_RIP_backend_2025)
 
 ## GitHub Pages:
-https://vyacheslav-programmer.github.io/web-project_cloud_cost_RIP_frontend_2025/
+https://vyacheslav-programmer.github.io/Web-project_cloud_cost_RIP_frontend_2025/
 
 ## Технологии:
 - React + TypeScript
