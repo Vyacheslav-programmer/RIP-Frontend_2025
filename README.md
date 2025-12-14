@@ -1,30 +1,30 @@
-﻿# РИП - Разработка Интернет Приложений 2025
+# React + TypeScript + Vite
 
-## Студент: Пронин Вячеслав Константинович, ИУ5Ц-73Б
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Тема: Оценка стоимости облачного хостинга для веб-проекта
+Currently, two official plugins are available:
 
-Репозиторий содержит фронтенд часть лабораторных работ по курсу РИП за 2025 год.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Ветки проекта:
+## Expanding the ESLint configuration
 
-- **SPA** - Лабораторная 5: React SPA с проксированием
-- **Tauri** - Лабораторная 6: Tauri десктопное приложение
-- **gh-pages** - Лабораторная 6: Frontend для GitHub Pages
-- **Redux** - Лабораторная 6: Frontend с Redux для PWA
-- **Auth** - Лабораторная 7: Авторизация, Redux Toolkit, работа с заявками
-- **Moderator** - Лабораторная 8: Интерфейс модератора
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Бэкенд репозиторий:
-[Web-project_cloud_cost_RIP_backend_2025](https://github.com/Vyacheslav-programmer/Web-project_cloud_cost_RIP_backend_2025)
+- Configure the top-level `parserOptions` property like this:
 
-## GitHub Pages:
-https://vyacheslav-programmer.github.io/Web-project_cloud_cost_RIP_frontend_2025/
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Технологии:
-- React + TypeScript
-- Redux Toolkit
-- React Bootstrap
-- Vite
-- Tauri
-- PWA
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
