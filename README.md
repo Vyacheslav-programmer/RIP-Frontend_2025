@@ -1,30 +1,38 @@
-# React + TypeScript + Vite
+# Лабораторная работа 5: SPA на React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Тема:** Оценка стоимости облачного хостинга для веб-проекта  
+**Студент:** Пронин Вячеслав Константинович, ИУ5Ц-73Б  
+**Ветка:** `SPA`
 
-Currently, two official plugins are available:
+#### Цель работы
+Разработка базового SPA на React для системы оценки стоимости облачного хостинга.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Задание
+Разработать три страницы фронтенд приложения на `React`, `TS` и подключить его к веб-сервису.
 
-## Expanding the ESLint configuration
+Разработать базовый интерфейс приложения на `React` для `гостя`, аналогичный двум страницам из лабораторной работы №1 для просмотра `тарифов облачного хостинга`, а также сделать `главную` (стартовую) страницу со статическим описанием. При этом на странице списка `тарифов` должны быть все необходимые фильтры (по диапазону дат, названию, цене) с фильтрацией на бэкенде. Использовать компоненты `React-Bootstrap`. Для карточек предусмотреть изображение по-умолчанию, если поле в `тарифе` пустое.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+В приложении должны быть навигационная панель `navbar` для списка базовых страниц, а также самописная навигационная цепочка `breadcrumbs`, где отображается путь от базовой страницы к текущей. В этой лабораторной никакого `Redux`, а `Context` вообще в курсе использовать нельзя.
 
-- Configure the top-level `parserOptions` property like this:
+Содержимое карточек получать из вашего веб-сервиса. Ajax-запросы написать самостоятельно через `fetch`. Ограничение с `CORS` решить через проксирование `React`. В методах `fetch` предусмотреть получение данных из коллекции с `mock`-объектами при отсутствии доступа к вашему бэкенду.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Порядок показа
+1. Показать три страницы фронтенда с `mock` без запущенного сервиса.
+2. Далее показать страницы фронтенда с бэкендом, показать в `network` адрес `fetch` через `proxy`, названия и адреса из `minio` для изображений.
+3. Внести изменения в БД, показать их во фронтенде.
+4. Объяснить код компонентов для фильтрации, передаваемые props, хуки, вызовы fetch.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Контрольные вопросы
+- React
+- Props и состояние
+- Компонент и элемент
+- useState и useEffect
+- Жизненный цикл компонента
+- CORS и обратный прокси
+- Vite и Babel
+- BFF и GraphQL
+- Next.js и SSG
+- FSD
+
+#### Диаграмма классов
+С детализацией бэкенда и фронтенда: домены с методами, но без моделей и БД, фронтенд разделить на страницы (все страницы а не только 3), добавить у страниц зависимость от API.
