@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Лабораторная работа 7: Авторизация и работа с расчётами
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Тема:** Оценка стоимости облачного хостинга для веб-проекта  
+**Студент:** Пронин Вячеслав Константинович, ИУ5Ц-73Б  
+**Ветка:** `Auth`
 
-Currently, two official plugins are available:
+#### Цель работы
+Завершение интерфейса `клиента` в `React` системы оценки стоимости облачного хостинга.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Задание
+Добавить авторизацию и возможность оформления `расчётов` во фронтенд через `Redux Toolkit` `redux-thunk`, кодогенерация взаимодействия с `API` через `Axios`.
 
-## Expanding the ESLint configuration
+Добавить страницы для регистрации и авторизации. Добавить страницу для просмотра списка `расчётов` клиента в виде таблицы. Добавить в меню пункты для новых страниц. Добавление в `Redux Toolkit` состояния интерфейса после авторизации. В приложении должно быть реализовано переключение между интерфейсом гостя и интерфейсом клиента по кнопке `Вход`/`Выход`. После авторизации в меню должно отображаться Имя/Логин пользователя. При выходе должно сбрасываться содержимое конструктора нового расчёта, а также фильтры клиента. Добавить страницу личного кабинета клиента для сброса пароля и других полей.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Добавление на странице тарифов кнопки `Добавить` для внесения данного тарифа в новый расчёт. Добавление страницы `расчёта`, где в статусе `черновик` можно удалить уже добавленные в расчёт тарифы, поменять их количество или `подтвердить` расчёт. Эта же страница используется для просмотра старых расчётов в других статусах, но без возможности редактирования. Переход на страницу `расчёта` через специальную кнопку, которая меняет состояние: если черновик есть - кнопка доступна, а если расчёта-черновика нет - кнопка отображается с другим стилем и недоступна.
 
-- Configure the top-level `parserOptions` property like this:
+Для обращений к методам веб-сервиса использовать `axios`, кодогенерацию и `redux-thunk middleware`. При выполнении запросов отображать на странице анимацию.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### Порядок показа
+1. Показать авторизацию, добавление и формирование `расчёта` в режиме разработчика, страница списка расчётов.
+2. Показать авторизацию в браузере, использовать содержимое `localStorage`/`cookie` из вкладки `Application` чтобы показать расчёты пользователя в `insomnia`/`postman`.
+3. Пояснить в коде использование `redux` и `axios`, показать применение сгенерированного кода фронтенда из `swagger`.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Контрольные вопросы
+- Схема redux-toolkit (reducer, store, middleware)
+- useContext
+- Axios
+- Local storage
+
+#### Activity диаграмма/BPMN
+Для итогового бизнес-процесса для ДЗ: описание бизнес-процесса, разделение на 3 дорожки по ролям двух пользователей и выделенного сервиса (при наличии), действия соответствуют операциям пользователей в вашей системе.
